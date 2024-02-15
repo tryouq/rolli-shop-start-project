@@ -29,8 +29,10 @@ window.addEventListener('click', function(event){
         if(itemInCard!=null){
             const counterEl = itemInCard.querySelector('[data-counter]');
             counterEl.innerText = parseInt(counterEl.innerText) + parseInt(producInfo.count);
-        }
-
+            
+        } else{
+            //если товара нет в корзине
+            
         //передаем данные в корзину, исп ковычки для шаблонных строк, на необх места будем делать подстановку
         const cartItemHTML = `<div class="cart-item" data-id="${producInfo.id}">
         <div class="cart-item__top">
@@ -62,5 +64,8 @@ window.addEventListener('click', function(event){
         </div>`;
         //отобразим в корзине, beforeend будет вставляться в конец
         cardWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
+        }
+        //Сбрасываем счетчик после добовления в корзину
+        card.querySelector('[data-counter]').innerText= '1';
     }
 })
