@@ -67,5 +67,7 @@ window.addEventListener('click', function(event){
         }
         //Сбрасываем счетчик после добовления в корзину
         card.querySelector('[data-counter]').innerText= '1';
-    }
+        //вызываем отображение статуса корзины
+        cartStatus();
+    } cartPrice();
 })
